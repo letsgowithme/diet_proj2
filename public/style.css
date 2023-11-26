@@ -38,7 +38,7 @@ h5,
 } 
 
 .h3_title{
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 .navbar {
@@ -66,9 +66,9 @@ margin-left: 70%!important;
 /* transform: translateX(-50%); */
 }
 
-.about,
-.about-block,
-.recipe_block,
+.about_txt_img,
+.about_block,
+.recipe_block,   
 .service_block,
 .recipe_card,
 .footer {
@@ -77,7 +77,11 @@ margin-left: 70%!important;
   flex-direction: column;
   align-items: center;
 }
-
+ .footer{
+  width: 100%; 
+  height: 3em;
+ }
+ 
 .service_title {
   font-size: 2em;
   padding: 0 15px;
@@ -89,11 +93,11 @@ margin-left: 70%!important;
   padding-bottom: 35px;
 }
 
-.about{
+.about_txt_img{
   background-color: rgb(135, 219, 237); 
 }
 
-.about-block {
+.about_block {
   width: 80%; 
 }
 
@@ -101,9 +105,7 @@ margin-left: 70%!important;
   font-size: 2em;
   padding: 5px 10px;
 }
-/* .recipe_card{
 
-} */
 
 .home_img_block {
   width: 300px;
@@ -115,6 +117,7 @@ margin-left: 70%!important;
 
 .recipe_block_title {
   font-size: 4em;
+  color: white;
 }
 .recipe_link {
   font-size: 3em!important;
@@ -174,30 +177,11 @@ li
 .card-body{
   background-color: rgb(135, 219, 237);
 }
-
+.card-header{
+  font-size: 2em;
 }
-/*  @media screen and (min-width: 460px)  */
+}
 
- /* @media screen and (min-width: 460px) {
-  .nav-link-name {
-    font-size: 4em!important;
-    padding-bottom: 80px;
-    
-  }
-  .navbar-toggler-icon {
-    font-size: 2.6em!important;
-  }
-  .navbar {
-    min-height: 2em;
-  }
-  .recipe_link {
-    font-size: 3em!important;
-  }
-  .recipe_descr {
-    font-size: 2em!important;
-    padding: 10px;
-  }
-} */
 
 /* @media screen and (min-width: 768px) */
 
@@ -225,7 +209,7 @@ li
     font-size: 2em!important;
     padding: 5px 10px;
   }
-  
+ 
   .recipe_descr {
     font-size: 3em!important;
    
@@ -234,9 +218,7 @@ li
   margin-left: 50%;
   transform: translateX(-50%);
   }
- .img2{
-  display: block;
-}
+ 
  
   .recipe_link {
     font-size: 1.6em;
@@ -255,7 +237,10 @@ li
     width: 80%;
    
    }
-
+   .recipe_descr {
+    font-size: 2em!important;
+    padding: 10px;
+  }
   
 }
 
@@ -265,7 +250,13 @@ li
     font-size: 1.2em!important;
     padding-bottom: 10px; 
   }
-
+  #img_header{
+    width: 100%; 
+    min-height: 800px; 
+    margin-top: -12em!important; 
+    position: fixed; 
+    margin-bottom: 5px;
+  }
   .name_link {
     margin-left: -3%;
     transform: translateX(0%);
@@ -274,6 +265,43 @@ li
   .navbar {
     min-height: 2.6em;
   }
+  
+  .jumbotron{
+    display: flex;
+  flex-direction: column!important;
+  }
+  .h3_title{
+    font-size: 2em;
+    font-family: 'Libre Baskerville', serif;
+  }
+  
+.about_txt_img,
+.card-header{
+  font-size: 1.5em;
+}
+
+.recipe_card,
+.footer,
+.about_txt_img {
+  display: flex;
+  flex-direction: row;
+    
+}
+
+.recipe_block,
+.recipe_card,
+.footer{
+  justify-content: space-around;
+}
+.footer{
+background-color: gray;
+  
+}
+.recipe_card{
+height: 5em;
+/* min-width: 300px; */
+
+}
 
   /* .user-info {
     margin-left: 50%;
@@ -289,18 +317,29 @@ li
   }
  
   .about-text {
-    font-size: 1.8em!important;
+    font-size: 1.5em!important;
     line-height: 40px;
     word-spacing: 10px;
     padding: 10px 25px;
   }
-
-  .about-block {
-    width: 50%;
+  .img2{
+    display: block;
+    min-width: 900px;
   }
+ 
+ .about_block
+ {
+  width:50%;
+ }
+ .about_title{
+  font-size: 2em;
+ }
+ .about_block{
+  align-items: center;
+ }
   .show_block_text {
   padding: 10px 15px;
-  color: red;
+
   }
   .home_img_block {
     width: 750px; 
@@ -308,7 +347,9 @@ li
    
   }
   .card {
-    width: 400px;
+    min-width: 300px;
+    max-width: 450px;
+    /* padding: 0 15px; */
    
    }
    .recipe_link {
@@ -319,7 +360,8 @@ li
     padding: 10px;
   }
   .recipe_block_title {
-    font-size: 3em!important;
+    font-size: 2.4em!important;
+   
   }
  
 }  

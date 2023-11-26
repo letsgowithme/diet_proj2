@@ -3,79 +3,84 @@
 	Page d'Accueil
 {% endblock %}
 {% block body %}
-	<div style="height: 510px; z-index: -3;">{% include "partials/_header_img.html.twig" %}</div>
+	<div style="height: 510px; z-index: -3;">{% include "partials/_header_img.html.twig" %}
+	</div>
 	<div class="container-fluid">
+	<div class="jumbotron">  
 		<h1 class="text-center mb-5 bg-primary py-3 text-light" style="font-family: 'Libre Baskerville', serif;">Sandrine Coupart
 			<br>
 			diététicienne-nutritionniste
-			<span class="mt-4" class="margin-top: 5em;">{% include "partials/_doctor_img.html.twig" %}</span>
+			<span class="mt-4" style="margin-top: 5em;">{% include "partials/_doctor_img.html.twig" %}</span>
 		</h1>
-		<div class="jumbotron">  
-			<div class="about" >
-				<div class="about-block">
-					<h3 class="mb-5 mt-4" style="font-family: 'Libre Baskerville', serif;">À  propos</h3>
-					<p class="text-center text-dark about-text">Je m'appelle Sandrine Coupart et je suis diététicienne-nutritionniste dont le cabinet est situé à Caen. En tant que
+</div>
+			<div class="about_txt_img">
+				<div class="about_block">
+					<h3 class="h3_title">À  propos</h3>
+					<p class="text-center text-dark about-text ms-xl-3">Je m'appelle Sandrine Coupart et je suis diététicienne-nutritionniste dont le cabinet est situé à Caen. En tant que
 										  professionnelle de santé, je prends en charge des patients dans le cadre de consultations diététiques. J'anime également des ateliers de prévention et d’information sur la nutrition.</p>
 				</div>
-				<div class="about-block">
+
+				<div class="about_block img1 mb-4">
 					{% include "partials/_home_img1.html.twig" %}
 				</div>
-		
-		<div class="about">
-			<div class="img2">
-				{% include "partials/_home_img2.html.twig" %}
-			</div>
-
-			<div class="service_block">
-				<h3 class="mb-1 mt-3 h3_title">Mes services</h3>
-				<ul style="list-style-type: none;" class="mt-4 text-center">
-					<li>
-						<h4 class="service_title">Bilan nutritionnel</h4>
-						<p class="service_text">50€ séance</p>
-					</li>
-					<li>
-						<h4 class="service_title">Suivi nutritionnel</h4>
-						<p class="service_text">50€ séance</p>
-					</li>
-					<li>
-						<h4 class="service_title">Coaching diététiquel</h4>
-						<p class="service_text">100€/mois</p>
-					</li>
-					<li>
-						<h4 class="service_title">Accompagnement menus</h4>
-						<p class="service_text">45€/mois</p>
-					</li>
-					<li>
-						<h4 class="service_title">Suivi grossesse</h4>
-						<p class="service_text">120€/mois</p>
-					</li>
-				</ul>
-			</div>
 		</div>
-		<hr class="mb-5">
-		<br>
-		<br>
-		<div class="recipes mb-5 recipe_block">
-			<h3 class="mt-4 text-center mb-5 rounded bg-primary recipe_block_title" style="height: auto; font-family: 'Libre Baskerville', serif;">Recettes</h3>
 
-			<div class="recipe_card text-center">
-				{% for recipe in recipes %}
-					<div class="card border-primary mb-3">
-						<div class="card-header fs-5">Recette numéro
-							{{ recipe.id }}</div>
-						<div class="card-body">
-							<h4 class="card-title text-light mb-4">
-								<a href="{{ path('recipe.show_public', {id: recipe.id}) }}" class="text-light recipe_link capitalize">{{ recipe.name }}</a>
-							</h4>
+<div class="about_txt_img">
 
-							<img style="min-width: 350px; min-height: 250px;" src="{{ vich_uploader_asset(recipe, 'imageFile') }}" class="recipe__image card-image img-fluid rounded">
-             
-							<div class="card-text recipe_descr">{{ recipe.description|raw }}</div>
-						</div>
-					</div>
-				{% endfor %}
-			</div>
-		</div>
+<div class="about_block img1 img2 h-100">
+		{% include "partials/_home_img2.html.twig" %}
 	</div>
+	<div class="about_block mt-4">
+		<h3 class=" h3_title text-center">Mes services</h3>
+		<ul style="list-style-type: none;" class="mt-4 text-center">
+			<li>
+				<h4 class="service_title">Bilan nutritionnel</h4>
+				<p class="service_text">50€ séance</p>
+			</li>
+			<li>
+				<h4 class="service_title">Suivi nutritionnel</h4>
+				<p class="service_text">50€ séance</p>
+			</li>
+			<li>
+				<h4 class="service_title">Coaching diététiquel</h4>
+				<p class="service_text">100€/mois</p>
+			</li>
+			<li>
+				<h4 class="service_title">Accompagnement menus</h4>
+				<p class="service_text">45€/mois</p>
+			</li>
+			<li>
+				<h4 class="service_title">Suivi grossesse</h4>
+				<p class="service_text">120€/mois</p>
+			</li>
+		</ul>
+	</div>
+</div>
+	{# <div> #}
+		<div>
+			<h3 class="text-center mb-5 bg-primary recipe_block_title w-100 py-4" style="height: auto; font-family: 'Libre Baskerville', serif;">Recettes</h3>
+<div class="recipe_card h-75">
+	{% for recipe in recipes %}
+		<div class="card border-primary mb-3 text-center">
+			<div class="card-header">Recette numéro
+				{{ recipe.id }}
+			</div>
+			<div class="card-body">
+				<h4 class="card-title text-light mb-4">
+					<a href="{{ path('recipe.show_public', {id: recipe.id}) }}" class="text-light recipe_link capitalize">{{ recipe.name }}</a>
+				</h4>
+				<img style="min-width: 350px; min-height: 250px;" src="{{ vich_uploader_asset(recipe, 'imageFile') }}" class="recipe__image card-image img-fluid rounded">
+				<div class="card-text recipe_descr">{{ recipe.description|raw }}
+				</div>
+			</div>
 		</div>
+	{% endfor %}
+{# </div> #}
+{# </div> #}
+{# </div> #}
+{# </div> #}
+{# </div> #}
+</div>
+</div>
+</div>
 {% endblock %}
