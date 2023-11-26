@@ -29,7 +29,9 @@ class AppFixtures extends Fixture
     public function  __construct()
     {
         $this->faker = Factory::create('fr_FR');
+        
     }
+    
     public function load(ObjectManager $manager): void
     {
          // Users
@@ -95,7 +97,9 @@ class AppFixtures extends Fixture
                 ->setDescription($this->faker->text(100))
                 ->setPreparationTime(mt_rand(1, 1440))
                 ->setPauseTime(mt_rand(1, 1440))
-                ->setCookingTime(mt_rand(1, 1440));
+                ->setCookingTime(mt_rand(1, 1440))
+                ->setImageName($this->faker->imageUrl(640, 480, 'animals', true))
+                ;
 
             for ($k = 0; $k < mt_rand(5, 5); $k++) {
                 $recipe->addIngredient($ingredients[mt_rand(0, count($ingredients) - 1)]);
