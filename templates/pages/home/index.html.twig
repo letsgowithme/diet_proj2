@@ -3,12 +3,12 @@
 	Page d'Accueil
 {% endblock %}
 {% block body %}
-	{# <div style="height: 510px; z-index: -3;">{% include "partials/_header_img.html.twig" %}</div> #}
+	<div style="height: 510px; z-index: -3;">{% include "partials/_header_img.html.twig" %}</div>
 	<div class="container-fluid">
 		<h1 class="text-center mb-5 bg-primary py-3 text-light" style="font-family: 'Libre Baskerville', serif;">Sandrine Coupart
 			<br>
 			diététicienne-nutritionniste
-			{# <span class="mt-4" class="margin-top: 5em;">{% include "partials/_doctor_img.html.twig" %}</span> #}
+			<span class="mt-4" class="margin-top: 5em;">{% include "partials/_doctor_img.html.twig" %}</span>
 		</h1>
 		<div class="jumbotron">
 			<div class="d-flex flex-lg-row justify-content-lg-between flex-sm-column about align-items-center about" style="background-color: rgb(135, 219, 237); height: auto;">
@@ -17,9 +17,9 @@
 					<p class="text-center text-dark about-text">Je m'appelle Sandrine Coupart et je suis diététicienne-nutritionniste dont le cabinet est situé à Caen. En tant que
 										  professionnelle de santé, je prends en charge des patients dans le cadre de consultations diététiques. J'anime également des ateliers de prévention et d’information sur la nutrition.</p>
 				</div>
-				{# <div class="about-block col-md-6 col-sm-12 col-xs-12 text-center">
+				<div class="about-block col-md-6 col-sm-12 col-xs-12 text-center">
 					{% include "partials/_home_img1.html.twig" %}
-				</div> #}
+				</div>
 			</div>
 			<br><br>
 
@@ -27,9 +27,9 @@
 			<br>
 		</div>
 		<div class="d-flex flex-lg-row justify-content-lg-between flex-sm-column about align-items-center about" style="background-color: rgb(135, 219, 237); height: auto;">
-			{# <div class="d-lg-block col-md-6 col-sm-12 col-xs-12 d-sm-none">
+			<div class="d-lg-block col-md-6 col-sm-12 col-xs-12 d-sm-none">
 				{% include "partials/_home_img2.html.twig" %}
-			</div> #}
+			</div>
 
 			<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex flex-column text-center">
 				<h3 class="mb-4 mt-3" style="font-family: 'Libre Baskerville', serif;">Mes services</h3>
@@ -63,7 +63,7 @@
 		<div class="recipes mb-5">
 			<h3 class="mt-4 text-center mb-5 rounded bg-primary recipe_block_title" style="height: auto; font-family: 'Libre Baskerville', serif;">Recettes</h3>
 
-			{# <div class="d-flex flex-sm-column align-items-sm-center flex-lg-row justify-content-lg-between text-center">
+			<div class="d-flex flex-sm-column align-items-sm-center flex-lg-row justify-content-lg-between text-center">
 				{% for recipe in recipes %}
 					<div class="card border-primary mb-3" style="min-width: 33%;">
 						<div class="card-header fs-5" style="background-color: rgb(135, 219, 237);">Recette numéro
@@ -79,7 +79,7 @@
 						</div>
 					</div>
 				{% endfor %}
-			</div> #}
+			</div>
 		</div>
 	</div>
 {% endblock %}

@@ -1,20 +1,37 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello RecipeController!{% endblock %}
-
+{% block title %}
+	Mes recettes
+{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/iryna/diet_project/src/Controller/RecipeController.php'|file_link(0) }}">src/Controller/RecipeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/iryna/diet_project/templates/recipe/index.html.twig'|file_link(0) }}">templates/recipe/index.html.twig</a></code></li>
-    </ul>
-</div>
+<div style="height: 50px; z-index: -3; margin-top: -10px;">{% include "partials/_header_img.html.twig" %}</div>
+	<div class="container mt-4">
+		<h1 class="text-center bg-primary" style="border-radius: 15px; padding: 10px; width: auto;">Mes recettes</h1>
+		<div class="d-flex justify-content-center flex-wrap">
+			   	{% if app.user.recipes %}
+					{% for recipe in app.user.recipes %}
+					
+						<div class="card border-primary mb-3 me-3" style="width: 20rem;">
+					<div class="card-header">Recette numéro
+						{{ recipe.id }}</div>
+					<div class="card-body">
+						<h4 class="card-title">
+						{% if recipe.isPublic is same as false %}					
+							<a href="{{ path('recipe.show', {id: recipe.id}) }}">{{ recipe.name }}</a>
+							{% else %}
+							<a href="{{ path('recipe.show_public', {id: recipe.id}) }}">{{ recipe.name }}</a>
+								{% endif %}
+						</h4>
+						<div class="recipe__image card-image">
+							<img style="max-width: 350px;" src="{{ vich_uploader_asset(recipe, 'imageFile') }}">
+						</div>
+						{# <p class="card-text">{{ recipe.description|slice(0, 100) ~ '...'  }}</p> #}
+							<p class="card-text">{{ recipe.description|raw }}</p>
+					</div>
+				</div>
+				{% endfor %}
+				{% endif %}
+			
+			
+		</div>
+	</div>
 {% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Recettes publiques  
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4 d-flex flex-sm-column justify-content-center">
+		<h1 class="ms-5 text-center">Recettes publiques</h1>
+		<div class="d-flex justify-content-center flex-wrap">
+			{% for recipe in recipes %}
+			{% if recipe.isPublic is same as true %}
+				<div class="card border-primary mb-3 me-3 text-sm-center">
+					<div class="card-header">Recette numéro
+						{{ recipe.id }}</div>
+					<div class="card-body">
+						<h4 class="card-title">
+						<a href="{{ path('recipe.show_public', {id: recipe.id}) }}">{{ recipe.name }}</a></h4>
+
+						<div class="recipe__image card-image">
+							<img 
+							style="max-width: 350px;" 
+							src="{{ vich_uploader_asset(recipe, 'imageFile') }}">
+						</div>
+						{# <p class="card-text">{{ recipe.description|slice(0, 100) ~ '...'  }}</p> #}
+						<p class="card-text">{{ recipe.description|raw }}</p>
+					</div>
+				</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
