@@ -3,8 +3,8 @@
 	Mes recettes
 {% endblock %}
 {% block body %}
-	<div class="container mt-4">
-		<h1 class="text-center">Collection de recettes</h1>
+	<div class="container recipes_page">
+		<h1 class="recipes_page_title my-4">Collection de recettes</h1>
 
 		<div class="d-flex justify-content-center flex-wrap">
 			{% if is_granted('ROLE_ADMIN') %}

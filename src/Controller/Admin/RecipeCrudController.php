@@ -15,6 +15,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Form\Type\FileUploadType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class RecipeCrudController extends AbstractCrudController
 {
@@ -40,12 +41,15 @@ class RecipeCrudController extends AbstractCrudController
             ->hideOnForm(),
             TextField::new('name')
                 ->setLabel('Nom'),
-
+             TextField::new('imageFile')
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex(),
             ImageField::new('imageName')
                 ->setFormType(FileUploadType::class)
                 ->setUploadDir('/public/uploads')
                 ->setRequired(false)
-                ->setLabel('Image'),
+                ->setLabel('Image')
+                ->hideOnIndex(),
             TextEditorField::new('description')
                 ->setFormType(CKEditorType::class)
                 ->hideOnIndex(),

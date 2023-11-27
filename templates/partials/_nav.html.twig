@@ -49,8 +49,9 @@
 					<div class="dropdown-menu bg-primary">
 						{% if 'ROLE_ADMIN' in app.user.roles %}
 							<a class="dropdown-item  fw-bold" href="/admin">Tableau de bord</a>
+								<div class="dropdown-divider"></div>
 						{% endif %}
-						<div class="dropdown-divider"></div>
+					
 						<a class="dropdown-item fw-bold" href="{{ path('security.logout') }}">Déconnextion</a>
 										{% endif %}
 				</li>
