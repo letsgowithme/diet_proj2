@@ -25,12 +25,15 @@
 		{% endblock %}
 	</head>
 	<body style="display: flex; flex-direction: column; min-height: 100vh; width: 100%; background-color: rgb(130 215 233);">
+	
 		{% block header %}
 		{% include "partials/_nav.html.twig" %}
 		{% endblock %}
 	
-		{% block body %}{% endblock %}
-		
+		{% block body %}
+		<div id="up"></div>{% endblock %}
+		{% include "partials/_btn_up.html.twig" %}
+		{% include "partials/_btn_home.html.twig" %}
 		{% include "partials/_footer.html.twig" %}
 	</body>
 </html>

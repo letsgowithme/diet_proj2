@@ -54,9 +54,6 @@ h5,
   color: white;
   
 }
-/* .footer{
-  background-color: #228a98;
-} */
 
 #img_header{
   min-width: 600px; 
@@ -232,6 +229,7 @@ li
   }
   .navbar {
     min-height: 2.1em;
+    margin-top: 0;
     
   }
   .service_title {
@@ -282,6 +280,10 @@ li
     min-width: 550px;
     
   }
+  .footer{
+    background-color: #228a98;
+    height: auto;
+  }
   
 }
 
@@ -326,8 +328,6 @@ li
 .about_txt_img {
   display: flex;
   flex-direction: row;
-
-    
 }
 
 .recipe_block,
@@ -339,15 +339,6 @@ li
 background-color: gray;
   
 }
-/* .recipe_cards{
-height: 5em;
-
-} */
-
-  /* .user-info {
-    margin-left: 50%;
-    transform: translateX(-50%);
-    } */
 
   .service_title {
     font-size: 1.5em;
@@ -408,6 +399,7 @@ height: 5em;
   /* ***recipes page*** */
   .card_rec_page{
     min-width: 350px;
+    min-height: 600px;
   }
   .card_img_rec_page {
     min-height: 300px;
@@ -417,8 +409,9 @@ height: 5em;
     flex-direction: row;
     justify-content: space-between;
     width: 120%;
+    min-height: 600px;
    
-    /* flex: wrap; */
+    flex: wrap;
     
   }
   .recipe_img{

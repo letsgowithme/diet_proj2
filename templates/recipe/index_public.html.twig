@@ -3,13 +3,16 @@
 	Recettes publiques  
 {% endblock %}
 
-{% block body %}
+{% block body %}   
+<div style="height: 50px; z-index: -3; margin-top: -10px;">{% include "partials/_header_img.html.twig" %}</div>
 	<div class="container recipes_page">
-		<h1 class="recipes_page_title my-4">Recettes publiques</h1>
+		<h1 class="recipes_page_title my-4 p-3" style="background: #228a98;">Recettes publiques</h1>
 		<div class="recipes_page_rec_block">
+
 			{% for recipe in recipes %}
 			{% if recipe.isPublic is same as true %}
-				<div class="card card_rec_page border-primary mb-3 text-xs-center w-100">
+
+				<div class="card card_rec_page border-primary mb-3 text-xs-center w-100" style="min-height: 600px!important;">
 					<div class="card-body">
 						<h4 class="card-title card_title text-center capitalize">
 						<a class=""href="{{ path('recipe.show_public', {id: recipe.id}) }}">{{ recipe.name }}</a></h4>
