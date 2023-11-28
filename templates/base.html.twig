@@ -12,6 +12,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="/style.css">
+		 <link rel="icon" href="/assets/images/plate-wheat-solid.svg">
+		
 	
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
@@ -31,8 +33,9 @@
 		{% endblock %}
 	
 		{% block body %}
-		<div id="up"></div>{% endblock %}
-		{% include "partials/_btn_up.html.twig" %}
+	
+		{% endblock %}
+		
 		{% include "partials/_btn_home.html.twig" %}
 		{% include "partials/_footer.html.twig" %}
 	</body>

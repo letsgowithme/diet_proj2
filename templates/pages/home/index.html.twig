@@ -3,12 +3,12 @@
 	Page d'Accueil
 {% endblock %}
 {% block body %}
+{# <div id="up"></div> #}
 <div style="height: 510px; z-index: -3;">{% include "partials/_header_img.html.twig" %}
 </div>
-
 <div class="container-fluid">
 	<div class="jumbotron w-100">
-		<h1 class="text-center mb-5 bg-primary py-3 text-light" style="font-family: 'Libre Baskerville', serif;">Sandrine Coupart
+		<h1 class="text-center mb-5 bg-primary py-3 text-light" style="font-family: 'Libre Baskerville', serif;"">Sandrine Coupart
 			<br>
 			diététicienne-nutritionniste
 			<span class="mt-4" style="margin-top: 5em;">{% include "partials/_doctor_img.html.twig" %}</span>
@@ -67,9 +67,9 @@
 				<div class="card border-primary mb-3 text-center" style="height: 500px!important;">	
 					<div class="card-body">
 						<h4 class="card-title text-light mb-4">
-							<a href="{{ path('recipe.show_public', {id: recipe.id}) }}" class="text-light recipe_link capitalize">{{ recipe.name }}</a>
+							<a href="{{ path('recipe.show_public', {id: recipe.id}) }}" class="text-light recipe_link show_recipe">{{ recipe.name }}</a>
 						</h4>
-						<img src="{{ vich_uploader_asset(recipe, 'imageFile') }}" class="recipe__image card-image img-fluid rounded">
+						<img src="{{ vich_uploader_asset(recipe, 'imageFile') }}" class="recipe__image card-image img-fluid rounded" alt="plat">
 						<div class="card-text recipe_descr">{{ recipe.description|raw }}
 						</div>
 					</div>
@@ -80,5 +80,5 @@
 </div>
 
 </div>
-	{# {% include "partials/_btn_up.html.twig" %} #}
+	{% include "partials/_btn_up.html.twig" %}
 {% endblock %}

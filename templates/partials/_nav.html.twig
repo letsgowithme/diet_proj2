@@ -7,7 +7,7 @@
 		<div class="collapse navbar-collapse" id="navbarColor01">
 			<ul class="navbar-nav me-auto text-center">
 				<li class="nav-item">
-					<a class="nav-link nav-link-name active fw-bold" href="/">Accueil
+					<a class="nav-link nav-link-name active fw-bold" href="/"  id="up">Accueil
 						<span class="visually-hidden">(current)</span>
 					</a>
 				</li>
@@ -16,7 +16,7 @@
 				</li>
 				{% if is_granted('ROLE_ADMIN') %}
 					<li class="nav-item">
-						<a class="nav-link nav-link-name fw-bol" href="{{ path('recipe.recipes') }}">
+						<a class="nav-link nav-link-name fw-bold" href="{{ path('recipe.recipes') }}">
 							Collection de recettes</a>
 					</li>
 				{% elseif app.user %}

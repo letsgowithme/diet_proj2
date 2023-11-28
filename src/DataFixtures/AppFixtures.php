@@ -47,7 +47,7 @@ class AppFixtures extends Fixture
             $manager->persist($admin);
 
 
-         for ($j = 0; $j < 10; $j++) {
+         for ($j = 0; $j < 6; $j++) {
             $user = new User();
             $user->setFullName($this->faker->name())
                 ->setEmail($this->faker->email())
@@ -91,7 +91,7 @@ class AppFixtures extends Fixture
         
         //Recipes
         $recipes = [];
-        for ($j = 0; $j < 5; $j++) {
+        for ($j = 0; $j < 10; $j++) {
             $recipe = new Recipe();
             $recipe->setName($this->faker->word())
                 ->setDescription($this->faker->text(100))

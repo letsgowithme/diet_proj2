@@ -5,7 +5,7 @@
 {% block body %}
 <div style="height: 50px; z-index: -3; margin-top: -10px;">{% include "partials/_header_img.html.twig" %}</div>
 	<div class="container recipes_page">
-		<h1 class="recipes_page_title my-4 p-3" style="background: #228a98;">Mes recettes</h1>
+		<h1 class="recipes_page_title my-4 p-3 rounded" style="background: #228a98;">Mes recettes</h1>
 <div class="recipes_page_rec_block">
 			   	{% if app.user.recipes %}
 					{% for recipe in app.user.recipes %}
@@ -14,13 +14,13 @@
 					<div class="card-body">
 						<h4 class="card-title card_title text-center capitalize">
 						{% if recipe.isPublic is same as false %}					
-							<a href="{{ path('recipe.show', {id: recipe.id}) }}">{{ recipe.name }}</a>
+							<a class="show_recipe" href="{{ path('recipe.show', {id: recipe.id}) }}">{{ recipe.name }}</a>
 							{% else %}
-							<a href="{{ path('recipe.show_public', {id: recipe.id}) }}">{{ recipe.name }}</a>
+							<a class="show_recipe" href="{{ path('recipe.show_public', {id: recipe.id}) }}">{{ recipe.name }}</a>
 								{% endif %}
 						</h4>
 						<div class="recipe__image card-image card_img_rec_page text-center">
-							<img class="recipe_img" src="{{ vich_uploader_asset(recipe, 'imageFile') }}">
+							<img class="recipe_img"  alt="plat" src="{{ vich_uploader_asset(recipe, 'imageFile') }}">
 						</div>
 							<p class="card-text text-center">{{ recipe.description|raw }}</p>
 					</div>
@@ -29,4 +29,5 @@
 				{% endif %}	
 		</div>
 	</div>
+	{% include "partials/_btn_up.html.twig" %}
 {% endblock %}

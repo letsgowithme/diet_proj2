@@ -69,7 +69,6 @@ h5,
 
 .user-info {
 margin-left: 70%!important;
-/* transform: translateX(-50%); */
 }
 
 .about_txt_img,
@@ -78,7 +77,6 @@ margin-left: 70%!important;
 .service_block,
 .recipe_cards,
 .footer {
-  /* height: auto; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,7 +124,6 @@ margin-left: 70%!important;
 .recipe_block_title {
   font-size: 4em;
   color: white;
-  /* height: auto;  */
   font-family: 'Libre Baskerville', serif;
 }
 .recipe_link {
@@ -136,6 +133,7 @@ margin-left: 70%!important;
 .recipe_descr {
   font-size: 2.2em!important;
   padding: 10px;
+  color: #272b2b;
 }
 
 
@@ -159,6 +157,8 @@ li
 }
 .show_block_text {
   padding: 10px 35px;
+  font-size: 1.7em!important;
+  color: rgb(19, 18, 18);
 }
 .name_link {
   margin-left: 80%;
@@ -182,7 +182,6 @@ li
 }
 .card {
  width: 100%;
- /* min-width: 33%; */
 }
 .card-header,
 .card-body{
@@ -212,7 +211,27 @@ li
 .recipe_img{
   max-width: 350px;
 }
-
+/* page show recipe */
+.show_recipe:hover{
+  color: white;
+  text-shadow: 1px 2px 2px rgb(4, 4, 80);
+}
+#show_rec_page_bg{
+  width: 100%; 
+  min-height: 1300px; 
+  position: fixed;
+}
+.show_rec_badge{
+font-size: 1.3em;
+}
+.btn_recipes{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.btn_recipes a{
+  text-decoration: none;
+}
 }
 
 
@@ -284,7 +303,11 @@ li
     background-color: #228a98;
     height: auto;
   }
-  
+  .btn_recipes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 /* @media screen and (min-width: 1000px  */
@@ -371,6 +394,8 @@ background-color: gray;
  }
   .show_block_text {
   padding: 10px 15px;
+  font-size: 1.6em!important;
+  
 
   }
   .home_img_block {
@@ -386,8 +411,11 @@ background-color: gray;
      
    }
    .recipe_link {
-    font-size: 2em!important;
+    font-size: 1.4em!important;
   }
+  .show_recipe{
+    font-size: 1.4em!important;
+      }
   .recipe_descr {
     font-size: 1.3em!important;
     padding: 10px;
@@ -407,6 +435,7 @@ background-color: gray;
   .recipes_page_rec_block{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 120%;
     min-height: 600px;
@@ -418,5 +447,10 @@ background-color: gray;
     min-width: 350px;
     
   }
-
+ 
+  #show_rec_page_bg{
+    width: 100%; 
+    min-height: 1100px; 
+    position: fixed;
+  }
 }  
